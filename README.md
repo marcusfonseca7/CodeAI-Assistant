@@ -100,38 +100,57 @@ IA_GENERATIVA/
 
 # ⚙️ Como Executar
 
-## 1 Clone o repositório
+## 1 - Clone o repositório
 
 ```bash
 git clone https://github.com/marcusfonseca7/CodeAI-Assistant.git
 ```
 
-## 2 Acesse a pasta do projeto
+## 2 - Acesse a pasta do projeto
 
 ```bash
 cd CodeAI-Assistant
 ```
 
-## 3 Instale as dependências
+## 3 - Instale as dependências
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## 4 Execute o projeto
+## 🔑 Configuração da API
+
+O projeto utiliza a API da Groq para realizar as análises com Inteligência Artificial.
+
+## 1 - Crie uma conta
+
+Acesse:
+https://console.groq.com
+
+## 2 - Gere sua API Key
+
+Após criar sua conta:
+- Vá até o painel da Groq
+- Acesse a seção de API Keys
+- Gere uma nova chave
+
+## 3 - Crie o arquivo `.env`
+
+Na raiz do projeto, crie um arquivo chamado:
+
+```
+.env
+
+```
+E adicione: 
+```
+API_KEY="sua_chave_api"
+```
+
+## 4 - Execute o projeto
 
 ```bash
 python app.py
-```
-
----
-
-# 🔑 Configuração da API
-
-Crie um arquivo `.env` na raiz do projeto:
-
-```env
-API_KEY="sua_chave_api"
 ```
 
 ---
