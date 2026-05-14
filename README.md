@@ -16,17 +16,20 @@ O projeto permite que usuários enviem arquivos `.py` ou colem códigos diretame
 # 🚀 Tecnologias Utilizadas
 
 ## Frontend
+
 - HTML5
 - CSS3
 - JavaScript
 - Jinja2
 
 ## Backend
+
 - Python
 - Flask
 - JSON
 
 ## Inteligência Artificial e Machine Learning
+
 - Groq API
 - Scikit-learn
 - spaCy
@@ -70,7 +73,7 @@ IA_GENERATIVA/
 ├── README.md
 │
 ├── docs/
-│   └── README.md 
+│   └── README.md
 │
 ├── ia/
 │   ├── main.py
@@ -135,9 +138,7 @@ API_KEY="sua_chave_api"
 
 # 💡 Objetivo do Projeto
 
-O projeto foi desenvolvido com foco acadêmico e tem como objetivo auxiliar estudantes e desenvolvedores iniciantes na identificação de problemas em códigos Python utilizando Inteligência Artificial.
-
----
+Desenvolvimento de uma Assistente Inteligente com IA Generativa voltada à automação do ciclo de vida de software eliminando gargalos operacionais e elevando o padrão de qualidade técnica através de uma arquitetura integrada e escalável.
 
 # 📌 Possíveis Melhorias Futuras
 
