@@ -6,7 +6,6 @@ from dotenv import load_dotenv
 import pandas as pd
 
 # IMPORTANDO BIBLIOTECAS PARA O TREINAMENTO DO MODELO DE MACHINE LEARNING, DEPOIS DE FAZER DATASET
-from tkinter.constants import X
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.model_selection import train_test_split
