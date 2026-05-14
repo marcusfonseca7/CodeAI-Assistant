@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assistente Inteligente</title>
+    <link rel="stylesheet" href="../static/css/estilo.css" />
+  </head>
+
+  <body>
+    {% with mensagens = get_flashed_messages() %} {% if mensagens %} {% for
+    mensagem in mensagens %}
+
+    <div class="alerta">{{ mensagem }}</div>
+
+    {% endfor %} {% endif %} {% endwith %}
+
+    <!-- Parte do header -->
+    <header>
+      <div class="header_grid">
+        <div id="header_name" class="header_card">
+          <a href="/" class="C"
+            >Code<span style="color: #38bdf8">AI</span> Assistant</a
+          >
+        </div>
+        <div id="header_hero" class="header_card">
+          <span>Projeto Final - IA Generativa</span>
+        </div>
+      </div>
+    </header>
+    <section class="secao-principal">
+      <h1 class="msg1">Otimize seu código</h1>
+      <!-- Container da analise -->
+      <h3 class="msg2">
+        Envie seu arquivo Python ou cole o código abaixo para receber uma
+        análise profunda com IA.
+      </h3>
+      <div class="container home">
+        <div id="container_arquivo">
+          <div id="container_codigo">
+            <div class="container_msg">Cole seu código fonte aqui</div>
+            <br />
+
+            <form action="/upload" method="POST" enctype="multipart/form-data">
+              <div class="codigo">
+                <div class="conteudo">
+                  <textarea
+                    id="codigo"
+                    name="codigo"
+                    placeholder="def minha_funcao(): ..."
+                  ></textarea>
+                </div>
+                <!-- Botao para selecionar arquivo -->
+                <div class="container-selecao">
+                  <input type="file" name="arquivo" id="arquivo" accept=".py" />
+                  <label for="arquivo" class="botao">
+                    <span class="mais">+</span>
+                  </label>
+                  <div class="selecao-arquivo" id="selecao-arquivo">
+                    <img src="" alt="" id="icone-arquivo" />
+                    <p id="nome-arquivo"></p>
+                    <img src="" alt="" id="icone-delecao" />
+                  </div>
+
+                  <div class="botao_verificar">
+                    <!-- Botao de analisar -->
+                    <button
+                      type="submit"
+                      class="btn_verificar"
+                      id="botao-enviar-analise"
+                    >
+                      Iniciar analise Inteligente
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div id="loading">
+        <div class="spinner"></div>
+        <p>Analisando código...</p>
+      </div>
+    </section>
+
+    <!-- Rodape da página -->
+    <footer class="rodape">
+      <div class="rodape-conteudo">
+        <div class="nome-logo">
+          <h2 class="C">Code<span>AI</span> Assistant</h2>
+        </div>
+        <p>Auxiliando você no seu aprendizado, com analises e correções!</p>
+
+        <p>© 2026 CodeAI Assistant. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+    <script src="/static/js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+# Ambiente virtual
+venv/
+.env/
+
+# Variáveis de ambiente
+.env
+
+# Cache Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Uploads
+temp/
+
+
+# Arquivos gerados
+*.log
+*.sqlite3
+
+# VS Code
+.vscode/
+
+# PyCharm
+.idea/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# NLTK
+nltk_data/
+
+# Arquivos temporários
+*.tmp
+*.temp
+
+# PDFs e arquivos gerados automaticamente
+*.pdf
+
+# Flask
+instance/
+.webassets-cache
+
+# Testes
+.pytest_cache/
+coverage/

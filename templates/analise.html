@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Análise da IA</title>
+    <link rel="stylesheet" href="../static/css/estilo.css" />
+  </head>
+
+  <body>
+    <!-- Area do Header -->
+    <header>
+      <div class="header_grid">
+        <div id="header_name" class="header_card">
+          <a href="/" class="C">Code<span>AI</span> Assistant</a>
+        </div>
+        <div id="header_hero" class="header_card">
+          <span>Projeto Final - IA Generativa</span>
+        </div>
+      </div>
+    </header>
+    <!-- Area do Header termina aqui  -->
+    <section class="secao-principal">
+      <h1 class="msg1">Correção do Código</h1>
+      <h3 class="msg2">Insights automáticos gerados por IA para seu código</h3>
+      <div class="container">
+        <div id="container_arquivo">
+          <!-- Condição para verificar nota e estilizar com base na nota -->
+          {% if dados.analise.nota_geral >= 8 %}
+          <div class="nota">
+            Nota:
+            <span class="alta"> {{ dados.analise.nota_geral }} </span> -
+            <span class="badge excelente"> Excelente</span>
+          </div>
+
+          {% elif dados.analise.nota_geral >= 5 %}
+          <div class="nota">
+            Nota:
+            <span class="media"> {{ dados.analise.nota_geral }} </span> -
+            <span class="badge regular"> Regular</span>
+          </div>
+
+          {% else %}
+          <div class="nota">
+            Nota:
+            <span class="baixa"> {{ dados.analise.nota_geral }} </span> -
+            <span class="badge ruim"> Crítico</span>
+          </div>
+          {% endif %}
+
+          <!-- Machine Learning - Nossa IA -->
+          {% if dados.status_ml == "Correto" %}
+
+          <div class="status correto">✅ Código classificado como correto</div>
+
+          {% else %}
+
+          <div class="status incorreto">
+            ❌ Código classificado como incorreto
+          </div>
+
+          {% endif %}
+
+          <!-- Code Smells -->
+
+          <p class="titulo-analise">⚠️ Más Práticas</p>
+          {% if dados.analise.code_smells %} {% for smell in
+          dados.analise.code_smells %}
+          <ul class="lista-analise">
+            <li>Linha: <span class="linha">{{smell.linha}}</span></li>
+            <li>Trecho: <span class="analise">"{{smell.trecho}}"</span></li>
+            <br />
+            <li>Problema: <span class="analise">{{smell.problema}}</span></li>
+            <li>
+              Gravidade:
+              <span class="analise {{smell.gravidade}}"
+                >{{smell.gravidade}}</span
+              >
+            </li>
+            <li>Solução: <span class="analise">{{smell.solucao}}</span></li>
+          </ul>
+          {% endfor %} {% else %}
+          <p class="lista-analise sem-problemas">
+            ✅ Nenhuma má prática encontrada.
+          </p>
+
+          {% endif %}
+
+          <!-- Otimização de Desempenho -->
+          <p class="titulo-analise">🚀 Desempenho</p>
+
+          {% if dados.analise.otimizacao_desempenho %} {% for otimiz in
+          dados.analise.otimizacao_desempenho %}
+          <ul class="lista-analise">
+            <li>Linha: <span class="linha">{{otimiz.linha}}</span></li>
+            <li>Trecho: <span class="analise">"{{otimiz.trecho}}"</span></li>
+            <br />
+            <li>Problema: <span class="analise">{{otimiz.problema}}</span></li>
+            <li>
+              Gravidade do Erro:
+              <span class="analise {{otimiz.gravidade}}"
+                >{{otimiz.gravidade}}</span
+              >
+            </li>
+            <li>Solução: <span class="analise">{{otimiz.solucao}}</span></li>
+          </ul>
+          {% endfor %} {% else %}
+          <p class="lista-analise sem-problemas">
+            ✅ Nenhum problema de desempenho encontrado.
+          </p>
+
+          {% endif %}
+
+          <!-- Tratamento de Erros -->
+          <p class="titulo-analise">🛡️ Tratamento de Erros</p>
+
+          {% if dados.analise.tratamento_erros %} {% for tratamento in
+          dados.analise.tratamento_erros %}
+          <ul class="lista-analise">
+            <li>Linha: <span class="linha">{{tratamento.linha}}</span></li>
+            <li>
+              Trecho: <span class="analise">"{{tratamento.trecho}}"</span>
+            </li>
+            <br />
+
+            <li>
+              Problema: <span class="analise">{{tratamento.problema}}</span>
+            </li>
+            <li>
+              Gravidade do Erro:
+              <span class="analise {{tratamento.gravidade}}"
+                >{{tratamento.gravidade}}</span
+              >
+            </li>
+            <li>
+              Solução: <span class="analise">{{tratamento.solucao}}</span>
+            </li>
+          </ul>
+          {% endfor %} {% else %}
+
+          <p class="lista-analise sem-problemas">
+            ✅ Nenhum problema de tratamento de erros encontrado.
+          </p>
+
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="avancar-pagina">
+        <a href="/documentacao">
+          Ir para a Documentação
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/109/109617.png"
+            alt="Seta para a direita"
+          />
+        </a>
+      </div>
+    </section>
+
+    <!-- Parte do Rodape -->
+    <footer class="rodape">
+      <div class="rodape-conteudo">
+        <div class="nome-logo">
+          <h2 class="C">
+            Code<span style="color: #38bdf8">AI</span> Assistant
+          </h2>
+        </div>
+        <p>Auxiliando você no seu aprendizado, com analises e correções!</p>
+
+        <p>© 2026 CodeAI Assistant. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <script src="/static/js/script.js"></script>
+  </body>
+</html>
