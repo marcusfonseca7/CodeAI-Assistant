@@ -59,8 +59,8 @@ O projeto permite que usuários enviem arquivos `.py` ou colem códigos diretame
 
 ✅ Geração automática de README
 
----
-
+--- 
+ 
 # 📂 Estrutura do Projeto
 
 ```bash
