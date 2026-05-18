@@ -12,6 +12,7 @@ from sklearn.model_selection import train_test_split
 
 #PERGUNTA E RESPOSTA I.A
 
+#FUNÇÃO PARA CHAMAR O ARQUIVO .ENV
 load_dotenv()
 
 client = Groq(api_key = os.getenv("API_KEY"))
