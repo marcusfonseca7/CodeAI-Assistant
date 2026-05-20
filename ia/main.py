@@ -318,7 +318,7 @@ dados = {
 
 data_frame_ia = pd.DataFrame(dados) #dataFrame é uma moldura que vai usar o data set como referencia 
 
-# Treinamento do modelo de Machine Learning, transformando o texto em vetores numéricos 
+# Treinamento do modelo de Machine Learning, transformando o texto do DataFrame em vetores numéricos 
 vetorizador = CountVectorizer(
     token_pattern=r'[a-zA-Z0-9_]+|[^a-zA-Z0-9\s]',
     analyzer='char_wb',
@@ -328,13 +328,13 @@ vetorizador = CountVectorizer(
 x = vetorizador.fit_transform(data_frame_ia['code'])
 y = data_frame_ia["status"]
 
-x_treino, x_teste, y_treino, y_teste = train_test_split(x,y, test_size = 0.2, random_state=42)
+x_treino, x_teste, y_treino, y_teste = train_test_split(x,y, test_size = 0.2, random_state=42) #Definicao de 80% do conteudo do DataFrame para treino e 20% para testes
 
 modelo_nb = MultinomialNB()
 modelo_nb.fit(x_treino, y_treino)
 print("Modelo treinado com sucesso")
 
-def analisador_status(codigo_novo):
+def analisador_status(codigo_novo): #Funcao que recebera o codigo do usuario e dara seu return como Correto ou Incorreto
    vetor = vetorizador.transform([codigo_novo])
 
    resultado = modelo_nb.predict(vetor)[0]
