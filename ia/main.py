@@ -325,6 +325,7 @@ vetorizador = CountVectorizer(
     ngram_range=(2,5),
     lowercase=False
     )
+# Adicionando vetor na variável x
 x = vetorizador.fit_transform(data_frame_ia['code'])
 y = data_frame_ia["status"]
 
