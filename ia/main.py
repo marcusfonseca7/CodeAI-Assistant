@@ -341,7 +341,7 @@ def analisador_status(codigo_novo): #Funcao que recebera o codigo do usuario e d
    resultado = modelo_nb.predict(vetor)[0]
     
    return resultado
-
+# Tratamento de erro
 def analisarCodigo(conteudo_codigo):
     try:
         #Chamei a funcao do Heitor
