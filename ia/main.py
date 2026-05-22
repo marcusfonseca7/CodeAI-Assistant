@@ -235,9 +235,7 @@ def gerar_readme_arquivo(caminho_arquivo):
 
     return caminho_readme
 
-# TRATAMENTO DOS DADOS/ FAZENDO A TOKENIZAÇAO: MUDANDO PARA LINGUA PORTUGUESA, SEPARANDO E RETIRANDO COISAS NAO IMPORTANTES COMO 
-# A,DE,OS, O
-
+#tratamento de dados fazendo a tokenização, area do dataset e dataframe
 dados = {
     "code": [
         # --- CORRETOS (250 itens) ---
