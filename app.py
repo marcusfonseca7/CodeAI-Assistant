@@ -2,9 +2,8 @@ from flask import Flask, render_template, send_file, request, redirect, url_for,
 import os
 from werkzeug.utils import secure_filename
 from ia.main import analisar_arquivo, numerar_linhas, analisarCodigo, gerar_readme_arquivo
-
 resultado_global = None
-
+# imports
 app = Flask(__name__)
 app.secret_key = "segredo"
 
