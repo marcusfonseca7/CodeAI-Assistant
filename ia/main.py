@@ -2,7 +2,7 @@ import os
 import json
 from groq import Groq
 from dotenv import load_dotenv
-
+#imports
 import pandas as pd
 
 # IMPORTANDO BIBLIOTECAS PARA O TREINAMENTO DO MODELO DE MACHINE LEARNING, DEPOIS DE FAZER DATASET
