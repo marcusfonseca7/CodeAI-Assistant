@@ -43,7 +43,7 @@ def upload():
             pasta_uploads,
             "arquivo_analise.py"
         )
-
+#salvando no caminho
         arquivo.save(caminho)
         resultado_ia = analisar_arquivo(caminho)
         gerar_readme_arquivo(caminho)
